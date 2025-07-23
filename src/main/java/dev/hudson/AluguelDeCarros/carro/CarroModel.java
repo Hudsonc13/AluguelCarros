@@ -1,0 +1,41 @@
+package dev.hudson.AluguelDeCarros.carro;
+
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.hudson.AluguelDeCarros.cliente.ClienteModel;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Entity
+@Table(name = "Carros")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public class CarroModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "Marca")
+    private String marca;
+
+    @Column(name = "Modelo")
+    private String modelo;
+
+    @Column(name = "Valor")
+    private int valor;
+
+    @Column(name = "Ano")
+    private int Ano;
+
+    @Column(unique = true, name = "Placa")
+    private String placa;
+
+    @Column
+    private int diaria;
+
+}
