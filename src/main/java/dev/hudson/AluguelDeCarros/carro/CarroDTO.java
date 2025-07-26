@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CarroDTO {
 
+    private Long Id;
     private String marca;
     private String modelo;
     private int valor;

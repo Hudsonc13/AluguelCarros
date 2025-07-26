@@ -26,6 +26,8 @@ public class CarroModel {
     @Column(name = "Modelo")
     private String modelo;
 
+
+    //Valor total do carro
     @Column(name = "Valor")
     private int valor;
 
@@ -35,6 +37,7 @@ public class CarroModel {
     @Column(unique = true, name = "Placa")
     private String placa;
 
+    //Valor do aluguel de um dia
     @Column
     private int diaria;
 
