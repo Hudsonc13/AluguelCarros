@@ -19,4 +19,6 @@ public class CarroDTO {
     private String placa;
     private int diaria;
 
+    // adcicionar boolean disponivel
+
 }

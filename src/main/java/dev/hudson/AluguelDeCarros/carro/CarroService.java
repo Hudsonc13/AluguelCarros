@@ -26,8 +26,9 @@ public class CarroService {
     }
 
     public CarroDTO criarCarro(CarroDTO DTO){
-        repository.save(mapper.map(DTO));
-        return DTO;
+        CarroModel model = mapper.map(DTO);
+        model = repository.save(model);
+        return mapper.map(model);
     }
 
     public void deletarCarro(Long id){
