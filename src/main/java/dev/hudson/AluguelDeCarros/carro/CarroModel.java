@@ -26,7 +26,6 @@ public class CarroModel {
     @Column(name = "Modelo")
     private String modelo;
 
-
     //Valor total do carro
     @Column(name = "Valor")
     private int valor;
@@ -38,7 +37,15 @@ public class CarroModel {
     private String placa;
 
     //Valor do aluguel de um dia
-    @Column
+    @Column(name = "diaria")
     private int diaria;
+
+    @Column(name = "disponivel")
+    private boolean disponivel;
+
+    //lombok não adicionou este get automaticamente, tive que adicionar manualmente
+    public boolean getDisponivel(){
+        return disponivel;
+    }
 
 }

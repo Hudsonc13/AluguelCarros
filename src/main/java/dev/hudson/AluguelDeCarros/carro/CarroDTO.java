@@ -18,7 +18,13 @@ public class CarroDTO {
     private int Ano;
     private String placa;
     private int diaria;
-
+    private boolean disponivel;
     // adcicionar boolean disponivel
+
+
+    //lombok não adicionou este get automaticamente, tive que adicionar manualmente
+    public boolean getDisponivel(){
+        return disponivel;
+    }
 
 }

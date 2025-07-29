@@ -16,6 +16,8 @@ public class CarroMapper {
         Model.setValor(DTO.getValor());
         Model.setPlaca(DTO.getPlaca());
         Model.setDiaria(DTO.getDiaria());
+        Model.setDisponivel(DTO.getDisponivel());
+
 
         return Model;
     }
@@ -30,6 +32,8 @@ public class CarroMapper {
         DTO.setValor(Model.getValor());
         DTO.setPlaca(Model.getPlaca());
         DTO.setDiaria(Model.getDiaria());
+        DTO.setDisponivel(Model.getDisponivel());
+
 
         return DTO;
     }
