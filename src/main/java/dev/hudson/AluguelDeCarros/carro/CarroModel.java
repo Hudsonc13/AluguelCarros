@@ -41,7 +41,7 @@ public class CarroModel {
     private int diaria;
 
     @Column(name = "disponivel")
-    private boolean disponivel;
+    private boolean disponivel = true;
 
     //lombok não adicionou este get automaticamente, tive que adicionar manualmente
     public boolean getDisponivel(){

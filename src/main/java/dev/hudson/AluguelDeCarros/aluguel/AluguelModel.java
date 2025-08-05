@@ -1,29 +1,26 @@
-package dev.hudson.AluguelDeCarros.service;
+package dev.hudson.AluguelDeCarros.aluguel;
 
 
-import dev.hudson.AluguelDeCarros.carro.CarroDTO;
 import dev.hudson.AluguelDeCarros.carro.CarroModel;
-import dev.hudson.AluguelDeCarros.cliente.ClienteDTO;
 import dev.hudson.AluguelDeCarros.cliente.ClienteModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Comment;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name = "Servico")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ServicoModel {
+public class AluguelModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "Clientes")
@@ -34,10 +31,10 @@ public class ServicoModel {
     private CarroModel carro;
 
     @Column
-    private Date DataInicio;
+    private String DataInicio;
 
     @Column
-    private Date DataFim;
+    private String DataFim;
 
     @Column
     private int Valor;

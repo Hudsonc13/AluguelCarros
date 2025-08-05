@@ -1,9 +1,12 @@
 package dev.hudson.AluguelDeCarros;
 
 
+import dev.hudson.AluguelDeCarros.aluguel.AluguelDTO;
+import dev.hudson.AluguelDeCarros.aluguel.AluguelService;
 import dev.hudson.AluguelDeCarros.carro.CarroDTO;
 import dev.hudson.AluguelDeCarros.carro.CarroService;
 import dev.hudson.AluguelDeCarros.cliente.ClienteDTO;
+import dev.hudson.AluguelDeCarros.cliente.ClienteModel;
 import dev.hudson.AluguelDeCarros.cliente.ClienteService;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,10 +18,12 @@ public class Controller {
 
     CarroService carro;
     ClienteService cliente;
+    AluguelService aluguel;
 
-    public Controller(CarroService carro, ClienteService cliente) {
+    public Controller(CarroService carro, ClienteService cliente, AluguelService aluguel) {
         this.carro = carro;
         this.cliente = cliente;
+        this.aluguel = aluguel;
     }
 
     @PostMapping ("/adcCarro")
@@ -30,6 +35,18 @@ public class Controller {
     public ClienteDTO adcCliente(@RequestBody ClienteDTO dto){
         return cliente.criarCliente(dto);
     }
+
+    @PostMapping("/adcAluguel")
+    public AluguelDTO adcAluguelDTO(@RequestBody AluguelDTO dto){
+        return aluguel.adcAluguel(dto);
+    }
+
+
+    @GetMapping("/mostrarCliente/{id}")
+    public ClienteModel mostrarc(@PathVariable Long id){
+        return aluguel.mostrarcliente(id);
+    }
+
 
     @GetMapping("/mostrarCarros")
     public List<CarroDTO> mostrarCarros(){
@@ -52,7 +69,6 @@ public class Controller {
     public void deletarCarro(@PathVariable Long id) {
         carro.deletarCarro(id);
     }
-
 
 
 

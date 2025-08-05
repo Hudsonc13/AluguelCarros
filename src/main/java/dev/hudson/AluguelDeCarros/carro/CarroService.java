@@ -4,6 +4,7 @@ package dev.hudson.AluguelDeCarros.carro;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -47,6 +48,11 @@ public class CarroService {
 
         }
         return null;
+    }
+
+    public boolean disponivel(CarroModel model){
+        Optional<CarroModel> carro = repository.findById(model.getId());
+        return carro.map(CarroModel::getDisponivel).orElse(false);
     }
 
 
